@@ -9,8 +9,8 @@ Client-side encryption is discussed using official documentation.
 
 ## 2. Source Information
 Original repository: https://github.com/bitwarden/server
-Reviewed commit ID: [Add the commit ID from the original repository]
-Review date: [Add date]
+Reviewed commit ID: 4e4adf99e96127e3955bbd7a1e733af75106ed21
+Review date:  October 22, 2026
 
 ## 3. Main Components
 [Explain the client applications, authentication service,
