@@ -40,8 +40,32 @@ Sources:
 - https://bitwarden.com/help/bitwarden-security-white-paper/
 
 ## 4. Security Architecture
-[Explain local vault encryption, encrypted storage,
-TLS communication, and authentication.]
+Bitwarden documents several layers of protection:
+
+- Local vault encryption: Vault contents are encrypted on the
+  user's device before being uploaded. Decryption also happens
+  on the client.
+
+- Zero knowledge design: Bitwarden's documented design prevents
+  the service from accessing plaintext vault contents. This does
+  not mean all account information is encrypted in the same way.
+
+- Key derivation: PBKDF2 SHA-256 or Argon2id helps derive
+  cryptographic keys from the master password.
+
+- Secure communication: TLS protects communication between
+  client applications and the server.
+
+These protections address different risks. Vault encryption
+protects stored contents, while TLS protects network traffic.
+Authentication controls access to backend services.
+
+These statements describe the documented architecture.
+Our server code review has not independently verified all
+client-side cryptographic protections.
+
+Source:
+https://bitwarden.com/help/bitwarden-security-white-paper/
 
 ## 5. Data Flow
 [Explain how a client communicates with the server
